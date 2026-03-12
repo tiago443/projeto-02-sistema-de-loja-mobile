@@ -1,0 +1,30 @@
+import React from "react";
+import { View, Text } from "react-native";
+import Botao from "./Botao";
+
+export default function ProdutoCard({produto, adicionar}){
+
+return(
+
+<View style={{
+borderWidth:1,
+borderColor:"#ccc",
+padding:10,
+borderRadius:6,
+marginBottom:10
+}}>
+
+<Text style={{fontWeight:"bold"}}>{produto.nome}</Text>
+<Text>{produto.descricao}</Text>
+<Text>R$ {produto.preco}</Text>
+
+<Botao
+titulo="Adicionar ao carrinho"
+onPress={()=>adicionar(produto)}
+/>
+
+</View>
+
+);
+
+}

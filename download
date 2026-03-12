@@ -1,0 +1,18 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+export const salvar = async (chave, valor) => {
+  try {
+    await AsyncStorage.setItem(chave, JSON.stringify(valor));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const ler = async (chave) => {
+  try {
+    const dados = await AsyncStorage.getItem(chave);
+    return dados ? JSON.parse(dados) : null;
+  } catch (e) {
+    console.log(e);
+  }
+};
